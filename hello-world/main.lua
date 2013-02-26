@@ -6,13 +6,10 @@ function MyApplication:onCreate()
    print('onCreate')
 end
 
-function MyApplication:onStart()
-   print('onStart')
-end
-
 function MyApplication:onResume()
    print('onResume')
 end
+
 local app = MyApplication:new()
 terevaka.TKApplication:setSharedApp(app) --   <-- call this if you want to access later to your application as a global variable
 
