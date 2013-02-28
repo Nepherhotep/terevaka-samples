@@ -22,7 +22,7 @@ function MainScene:init()
    
    -- loading scene layer
    self.layer = MOAILayer2D.new()
-   self:fillLayer(self.layer, self.texturePack, 'main-layout')
+   self:fillLayer(self.layer, 'main-layout', self.texturePack)
 end
 
 function MainScene:getLayers()
