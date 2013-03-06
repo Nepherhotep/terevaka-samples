@@ -2,20 +2,9 @@ local terevaka = require("terevaka.terevaka")
 
 MyApplication = terevaka.TKApplication:new()
 
-function MyApplication:onCreate()
-   print('onCreate')
-end
-
-function MyApplication:onResume()
-   print('onResume')
-end
-
-local app = MyApplication:new()
-terevaka.TKApplication:setSharedApp(app) --   <-- call this if you want to access later to your application as a global variable
-
-
 MainScene = terevaka.TKScene:new()
 
+-- Creating main scene
 function MainScene:init()
    -- loading sprite pack
    self.texturePack = terevaka.TKResourceManager.loadTexturePack('main')
@@ -32,4 +21,17 @@ end
 local mainScene = MainScene:new()
 mainScene:init()
 
+-- Creating my application
+function MyApplication:onCreate()
+   print('onCreate')
+end
+
+function MyApplication:onResume()
+   print('onResume')
+end
+
+local app = MyApplication:new()
+terevaka.TKApplication:setSharedApp(app) --   <-- call this if you want to access later to your application as a global variable
 app:initWithScene(mainScene)
+
+print('view', mainScene:findViewById('main-layout', 'pink_box'))
