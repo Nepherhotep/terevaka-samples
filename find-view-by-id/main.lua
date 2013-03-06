@@ -34,4 +34,5 @@ local app = MyApplication:new()
 terevaka.TKApplication:setSharedApp(app) --   <-- call this if you want to access later to your application as a global variable
 app:initWithScene(mainScene)
 
-print('view', mainScene:findViewById('main-layout', 'pink_box'))
+local prop = mainScene:findPropById('main-layout', 'pink_box')
+prop:moveRot( 360, 1.5 )
