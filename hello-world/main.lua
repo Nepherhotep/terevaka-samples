@@ -25,7 +25,7 @@ function MainScene:init()
    self:fillLayer(self.layer, 'main-layout', self.texturePack)
 end
 
-function MainScene:getLayers()
+function MainScene:getRenderTable()
    return {self.layer}
 end
 
