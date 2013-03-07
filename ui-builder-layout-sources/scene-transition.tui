@@ -1,0 +1,1 @@
+{"working_dir": "/Users/alex/Projects/terevaka-samples/ui-builder-layout-sources/ui-builder-sprites", "layout_path": "/Users/alex/Projects/terevaka-samples/scene-transition/res/layout/main-layout.lua", "props": [{"align_left": true, "name": "sprite2.png", "x_unit": "%", "y_unit": "%", "align_bottom": true, "y": 50.0, "x": 50.0, "type": "sprite", "id": 1, "uid": "pink_box"}]}
