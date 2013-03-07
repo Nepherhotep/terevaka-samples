@@ -11,7 +11,18 @@ function MainScene:init()
    
    -- loading scene layer
    self.layer = MOAILayer2D.new()
+   self.partition = MOAIPartition.new()
+   self.layer:setPartition(self.partition)
    self:fillLayer(self.layer, 'main-layout', self.texturePack)
+end
+
+function MainScene:onTouch(event)
+   local prop = self.partition:propForPoint(self.layer:wndToWorld(event.wndX, event.wndY))
+   if prop then
+      if prop.tap then
+	 prop:tap(event)
+      end
+   end
 end
 
 function MainScene:getRenderTable()
@@ -35,4 +46,6 @@ terevaka.TKApplication:setSharedApp(app) --   <-- call this if you want to acces
 app:initWithScene(mainScene)
 
 local prop = mainScene:findPropById('main-layout', 'pink_box')
-prop:moveRot( 360, 1.5 )
+prop.tap = function(self, event)
+   self:moveRot( 360, 1.5 )
+end
