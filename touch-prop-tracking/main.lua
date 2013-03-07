@@ -11,13 +11,11 @@ function MainScene:init()
    
    -- loading scene layer
    self.layer = MOAILayer2D.new()
-   self.partition = MOAIPartition.new()
-   self.layer:setPartition(self.partition)
    self:fillLayer({layer = self.layer, resourceName='main-layout', texturePack = self.texturePack})
 end
 
 function MainScene:onTouch(event)
-   local prop = self.partition:propForPoint(self.layer:wndToWorld(event.wndX, event.wndY))
+   local prop = self.layer:getPartition():propForPoint(self.layer:wndToWorld(event.wndX, event.wndY))
    if prop then
       if prop.tap then
 	 prop:tap(event)
