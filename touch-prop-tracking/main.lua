@@ -38,7 +38,27 @@ local app = MyApplication:new()
 terevaka.TKApplication:setSharedApp(app) --   <-- call this if you want to access later to your application as a global variable
 app:initWithScene(mainScene)
 
-local prop = mainScene:findPropById('main-layout', 'pink_box')
-prop.onTouch = function(self, event)
+local pinkBox = mainScene:findPropById('main-layout', 'pink_box')
+pinkBox.onTouch = function(self, event)
+   self:moveRot( -180, 1.5 )
+end
+
+local greenBox = mainScene:findPropById('main-layout', 'green_box')
+greenBox.onTouch = function(self, event)
+   self:moveRot( 180, 1.5 )
+end
+
+local blueBox = mainScene:findPropById('main-layout', 'blue_box')
+blueBox.onTouch = function(self, event)
+   self:moveRot( -360, 1.5 )
+end
+
+local brownBox = mainScene:findPropById('main-layout', 'brown_box')
+brownBox.onTouch = function(self, event)
+   self:moveRot( 360, 1.5 )
+end
+
+local mainButton = mainScene:findPropById('main-layout', 'main_button')
+mainButton.onTouch = function(self, event)
    self:moveRot( 360, 1.5 )
 end
