@@ -1,4 +1,5 @@
 return {
+    ["layout_type"] = "elastic",
     ["props"] = {
         {
             ["align_bottom"] = true,
