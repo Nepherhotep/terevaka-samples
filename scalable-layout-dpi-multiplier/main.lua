@@ -22,13 +22,14 @@ function MainScene:init()
    
    -- loading scene layer
    self.layer = MOAILayer2D.new()
-   self:fillLayer({layer = self.layer, resourceName='main-layout', texturePack = self.texturePack, dpiMultiplier = 4.8})
+   self:fillLayer({layer = self.layer, resourceName='main-layout', texturePack = self.texturePack})
 end
 
 function MainScene:getRenderTable()
    return {self.layer}
 end
 
+MOAIGfxDevice.setClearColor(0.7,0.7,0.70,1)
 local mainScene = MainScene:new()
 mainScene:init()
 
