@@ -22,7 +22,7 @@ function MainScene:init()
    
    -- loading scene layer
    self.layer = MOAILayer2D.new()
-   self:fillLayer({layer = self.layer, resourceName='main-layout', texturePack = self.texturePack, dpiMultiplier = 3.2})
+   self:fillLayer({layer = self.layer, resourceName='main-layout', texturePack = self.texturePack})
 end
 
 function MainScene:getRenderTable()
