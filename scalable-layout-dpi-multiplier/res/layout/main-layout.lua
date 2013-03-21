@@ -1,0 +1,52 @@
+return {
+    ["layout_type"] = "scalable",
+    ["layout_width"] = 427.0,
+    ["layout_height"] = 320.0,
+    ["layout_h_align"] = "center",
+    ["props"] = {
+        {
+            ["align_bottom"] = false,
+            ["name"] = "sprite1.png",
+            ["align_left"] = true,
+            ["y_unit"] = "px",
+            ["x_unit"] = "px",
+            ["y"] = 24,
+            ["x"] = 23,
+            ["type"] = "sprite",
+            ["id"] = 1,
+        },
+        {
+            ["align_bottom"] = true,
+            ["name"] = "sprite1.png",
+            ["align_left"] = true,
+            ["y_unit"] = "px",
+            ["x_unit"] = "px",
+            ["y"] = 27,
+            ["x"] = 25,
+            ["type"] = "sprite",
+            ["id"] = 2,
+        },
+        {
+            ["align_bottom"] = false,
+            ["name"] = "sprite1.png",
+            ["align_left"] = false,
+            ["y_unit"] = "px",
+            ["x_unit"] = "px",
+            ["y"] = 25,
+            ["x"] = 28,
+            ["type"] = "sprite",
+            ["id"] = 3,
+        },
+        {
+            ["align_bottom"] = true,
+            ["name"] = "sprite1.png",
+            ["align_left"] = false,
+            ["y_unit"] = "px",
+            ["x_unit"] = "px",
+            ["y"] = 25,
+            ["x"] = 25,
+            ["type"] = "sprite",
+            ["id"] = 4,
+        }
+    }
+}
