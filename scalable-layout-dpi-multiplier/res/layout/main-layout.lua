@@ -1,5 +1,8 @@
 return {
-    ["layout_type"] = "elastic",
+    ["layout_type"] = "scalable",
+    ["layout_width"] = 427.0,
+    ["layout_height"] = 320.0,
+    ["layout_h_align"] = "center",
     ["props"] = {
         {
             ["align_bottom"] = false,
@@ -7,8 +10,8 @@ return {
             ["align_left"] = true,
             ["y_unit"] = "px",
             ["x_unit"] = "px",
-            ["y"] = 33,
-            ["x"] = 32,
+            ["y"] = 37,
+            ["x"] = 31,
             ["type"] = "sprite",
             ["id"] = 1,
         },
@@ -95,8 +98,8 @@ return {
             ["align_left"] = true,
             ["y_unit"] = "px",
             ["x_unit"] = "px",
-            ["y"] = 0.0,
-            ["x"] = 221.0,
+            ["y"] = 6,
+            ["x"] = 221,
             ["type"] = "sprite",
             ["id"] = 9,
         }
