@@ -10,8 +10,8 @@ return {
             ["align_left"] = true,
             ["y_unit"] = "px",
             ["x_unit"] = "px",
-            ["y"] = 273,
-            ["x"] = 41,
+            ["y"] = 288,
+            ["x"] = 30,
             ["type"] = "sprite",
             ["id"] = 1,
         },
@@ -80,6 +80,17 @@ return {
             ["x"] = 262,
             ["type"] = "sprite",
             ["id"] = 7,
+        },
+        {
+            ["align_bottom"] = true,
+            ["name"] = "sun.png",
+            ["align_left"] = true,
+            ["y_unit"] = "px",
+            ["x_unit"] = "px",
+            ["y"] = 286,
+            ["x"] = 386,
+            ["type"] = "sprite",
+            ["id"] = 8,
         }
     }
 }
