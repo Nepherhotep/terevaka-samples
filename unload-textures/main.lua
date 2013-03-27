@@ -10,13 +10,17 @@ end
 function MainScene:onLoadScene()
    -- loading sprite pack
    self.texturePack = terevaka.TKResourceManager.loadTexturePack('main')
-   
    self:fillLayer({layer = self.layer, resourceName='main-layout', texturePack = self.texturePack})
    local openSecondScene = self:findPropById('main-layout', 'open_second_scene')
    openSecondScene.onTouch = function(self, event)
       local app = MyApplication.getSharedApp()
       app:replaceScene(app.secondScene)
    end
+end
+
+function MainScene:onRemoveScene()
+   self.layer:clear()
+   self.texturePack:release()
 end
 
 function MainScene:onTouch(event)
@@ -38,6 +42,11 @@ function SecondScene:onLoadScene()
    
    -- loading scene layer
    self:fillLayer({layer = self.layer, resourceName='second-layout', texturePack = self.texturePack})
+end
+
+function SecondScene:onRemoveScene()
+   self.layer:clear()
+   self.texturePack:release()
 end
 
 function SecondScene:onTouch(event)
