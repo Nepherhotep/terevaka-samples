@@ -8,23 +8,7 @@
         <key>verbose</key>
         <false/>
         <key>autoSDSettings</key>
-        <array>
-            <struct type="AutoSDSettings">
-                <key>scale</key>
-                <double>0.5</double>
-                <key>extension</key>
-                <string>.</string>
-                <key>acceptFractionalValues</key>
-                <false/>
-                <key>maxTextureSize</key>
-                <QSize>
-                    <key>width</key>
-                    <int>2048</int>
-                    <key>height</key>
-                    <int>2048</int>
-                </QSize>
-            </struct>
-        </array>
+        <array/>
         <key>allowRotation</key>
         <true/>
         <key>quiet</key>
@@ -38,7 +22,7 @@
         <key>dataFormat</key>
         <string>moai</string>
         <key>textureFileName</key>
-        <filename>../hello-world/res/drawable-mdpi/main-hd.png</filename>
+        <filename>../../scalable-layout/res/drawable-xhdpi/main.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -127,9 +111,9 @@
             <enum type="AndEngine::MagFilter">MagLinear</enum>
         </struct>
         <key>dataFileName</key>
-        <filename>../hello-world/res/drawable-mdpi/main-hd.lua</filename>
+        <filename>../../scalable-layout/res/drawable-xhdpi/main.lua</filename>
         <key>mainExtension</key>
-        <string>-hd.</string>
+        <string></string>
         <key>forceIdenticalLayout</key>
         <false/>
         <key>outputFormat</key>
@@ -157,7 +141,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>sprites</filename>
+            <filename>../ui-builder-sprites</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
