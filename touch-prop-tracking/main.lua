@@ -57,8 +57,3 @@ local brownBox = mainScene:findPropById('main-layout', 'brown_box')
 brownBox.onTouch = function(self, event)
    self:moveRot( 360, 1.5 )
 end
-
-local mainButton = mainScene:findPropById('main-layout', 'main_button')
-mainButton.onTouch = function(self, event)
-   self:moveRot( 360, 1.5 )
-end
