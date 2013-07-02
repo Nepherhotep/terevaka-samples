@@ -1,35 +1,35 @@
-local terevaka = require("terevaka.terevaka")
+local terevaka = require ( "terevaka.terevaka" )
 
-MyApplication = terevaka.TKApplication:new()
+MyApplication = terevaka.TKApplication:new ()
 
-function MyApplication:onCreate()
-   print('onCreate')
+function MyApplication:onCreate ()
+   print ( 'onCreate' )
 end
 
-function MyApplication:onResume()
-   print('onResume')
+function MyApplication:onResume ()
+   print ( 'onResume' )
 end
 
-local app = MyApplication:new()
-terevaka.TKApplication:setSharedApp(app) --   <-- call this if you want to access later to your application as a global variable
+local app = MyApplication:new ()
+terevaka.TKApplication:setSharedApp ( app ) --   <-- call this if you want to access later to your application as a global variable
 
 
-MainScene = terevaka.TKScene:new()
+MainScene = terevaka.TKScene:new ()
 
-function MainScene:init()
+function MainScene:init ()
    -- loading sprite pack
-   self.texturePack = terevaka.TKResourceManager.loadTexturePack('main')
+   self.texturePack = terevaka.TKResourceManager.loadTexturePack ( 'main' )
    
    -- loading scene layer
-   self.layer = MOAILayer2D.new()
-   self:fillLayer({layer = self.layer, resourceName='main-layout', texturePack = self.texturePack})
+   self.layer = terevaka.TKLayer:new () :init ()
+   self.layer:fill ({ resourceName='main-layout', texturePack = self.texturePack })
+   return self
 end
 
-function MainScene:getRenderTable()
-   return {self.layer}
+function MainScene:getRenderTable ()
+   return { self.layer:getMOAILayer ()}
 end
 
-local mainScene = MainScene:new()
-mainScene:init()
+local mainScene = MainScene:new () :init ()
 
-app:initWithScene(mainScene)
+app:initWithScene ( mainScene )
