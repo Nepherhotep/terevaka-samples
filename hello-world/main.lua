@@ -23,13 +23,13 @@ function MainScene:init ()
    -- loading scene layer
    self.layer = terevaka.TKLayer:new () :init ()
    self.layer:fill ({ resourceName='main-layout', texturePack = self.texturePack })
+   return self
 end
 
 function MainScene:getRenderTable ()
    return { self.layer:getMOAILayer ()}
 end
 
-local mainScene = MainScene:new ()
-mainScene:init ()
+local mainScene = MainScene:new () :init ()
 
 app:initWithScene ( mainScene )
