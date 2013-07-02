@@ -1,0 +1,1 @@
+{"layout_height": 768, "layout_width": 1024, "layout_path": "../multipack/res/layout/main-layout2.lua", "working_dir": "ui-builder-sprites-h768px-part2", "props": [{"z_index": 0, "name": "220px-Lenna-2.png", "h_align": "right", "y": 401.0, "x": 850.0, "type": "sprite", "id": 1}], "layout_type": "scalable"}
