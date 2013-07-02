@@ -7,7 +7,7 @@ MainScene = terevaka.TKScene:new () :init ()
 -- Creating main scene
 function MainScene:init ()
    -- loading sprite pack
-   self.texturePack = terevaka.TKResourceManager.loadTexturePack ( 'main' )
+   self.texturePack = terevaka.TKResourceManager.loadDrawable ( 'main' )
    
    -- loading scene layer
    self.layer = terevaka.TKLayer:new () :init ()
