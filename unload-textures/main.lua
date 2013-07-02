@@ -5,13 +5,14 @@ MainScene = terevaka.TKScene:new () :init ()
 
 function MainScene:init () 
    self.layer = terevaka.TKLayer: new() :init ()
+   return self
 end
 
 function MainScene:onLoadScene () 
    -- loading sprite pack
    self.texturePack = terevaka.TKResourceManager.loadTexturePack ( 'main' ) 
-   self:fillLayer ( {layer = self.layer, resourceName='main-layout', texturePack = self.texturePack} ) 
-   local openSecondScene = self:findPropById ( 'main-layout', 'pink_box' ) 
+   self.layer:fill ({ resourceName='main-layout', texturePack = self.texturePack })
+   local openSecondScene = self.layer:findPropById ( 'pink_box' ) 
    openSecondScene.onTouch = function ( self, event ) 
       local app = MyApplication.getSharedApp () 
       app:replaceScene ( app.secondScene ) 
@@ -28,12 +29,13 @@ function MainScene:onTouch ( event )
 end
 
 function MainScene:getRenderTable () 
-   return {self.layer}
+   return { self.layer:getMOAILayer ()}
 end
 
 SecondScene = terevaka.TKScene:new () 
 function SecondScene:init () 
-   self.layer = MOAILayer2D.new () 
+   self.layer = terevaka.TKLayer:new () :init ()
+   return self
 end
 
 function SecondScene:onLoadScene () 
@@ -41,7 +43,7 @@ function SecondScene:onLoadScene ()
    self.texturePack = terevaka.TKResourceManager.loadTexturePack ( 'main' ) 
    
    -- loading scene layer
-   self:fillLayer ( {layer = self.layer, resourceName='second-layout', texturePack = self.texturePack} ) 
+   self.layer:fill ({ resourceName='second-layout', texturePack = self.texturePack }) 
 end
 
 function SecondScene:onRemoveScene () 
@@ -55,7 +57,7 @@ function SecondScene:onTouch ( event )
 end
 
 function SecondScene:getRenderTable () 
-   return {self.layer}
+   return { self.layer:getMOAILayer ()}
 end
 
 -- Creating my application
@@ -72,10 +74,7 @@ end
 local app = MyApplication:new () 
 terevaka.TKApplication:setSharedApp ( app )  --   <-- call this if you want to access later to your application as a global variable
 
-app.mainScene = MainScene:new () 
-app.mainScene:init () 
-
-app.secondScene = SecondScene:new () 
-app.secondScene:init () 
+app.mainScene = MainScene:new () :init ()
+app.secondScene = SecondScene:new () :init ()
 
 app:initWithScene ( app.mainScene ) 
