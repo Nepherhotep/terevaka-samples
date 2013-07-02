@@ -59,9 +59,8 @@ function MyApplication:onResume ()
    print ( 'onResume' )
 end
 
-local app = MyApplication:new () :init ()
+local app = MyApplication:new () :initWithScene ( mainScene )
 terevaka.TKApplication:setSharedApp ( app ) --   <-- call this if you want to access later to your application as a global variable
-app:initWithScene ( mainScene )
 
 local pinkBox = mainScene.layer:findPropById ( 'pink_box' )
 pinkBox.onTouch = function ( self, event )
