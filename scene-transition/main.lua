@@ -2,16 +2,17 @@ local terevaka = require("terevaka.terevaka")
 
 MyApplication = terevaka.TKApplication:new()
 
-MainScene = terevaka.TKScene:new()
+MainScene = terevaka.TKScene:new() :init ()
 
 -- Creating main scene
-function MainScene:init()
+function MainScene:init ()
    -- loading sprite pack
    self.texturePack = terevaka.TKResourceManager.loadTexturePack('main')
    
    -- loading scene layer
    self.layer = terevaka.TKLayer:new () :init ()
    self.layer:fill ({ resourceName='main-layout', texturePack = self.texturePack })
+   return self
 end
 
 function MainScene:onTouch(event)
@@ -22,11 +23,9 @@ function MainScene:getRenderTable ()
    return { self.layer:getMOAILayer ()}
 end
 
-local mainScene = MainScene:new ()
-mainScene:init ()
+local mainScene = MainScene:new () :init ()
 
-
-SecondScene = terevaka.TKScene:new ()
+SecondScene = terevaka.TKScene:new () :init ()
 -- Creating second scene
 function SecondScene:init ()
    -- loading sprite pack
@@ -35,6 +34,7 @@ function SecondScene:init ()
    -- loading scene layer
    self.layer = terevaka.TKLayer:new () :init ()
    self.layer:fill ({ resourceName='second-layout', texturePack = self.texturePack })
+   return self
 end
 
 function SecondScene:onTouch ( event )
@@ -47,8 +47,7 @@ function SecondScene:getRenderTable ()
    return { self.layer:getMOAILayer ()}
 end
 
-local secondScene = SecondScene:new ()
-secondScene:init ()
+local secondScene = SecondScene:new () :init ()
 
 
 -- Creating my application
@@ -60,7 +59,7 @@ function MyApplication:onResume ()
    print ( 'onResume' )
 end
 
-local app = MyApplication:new ()
+local app = MyApplication:new () :init ()
 terevaka.TKApplication:setSharedApp ( app ) --   <-- call this if you want to access later to your application as a global variable
 app:initWithScene ( mainScene )
 
