@@ -8,14 +8,14 @@ function MainScene:init ()
    return self
 end
 
-function MainScene:onLoadScene () 
+function MainScene:onLoadScene ( params )
    -- loading sprite pack
    self.texturePack = terevaka.TKResourceManager.loadDrawable ( 'main' ) 
    self.layer:fill ({ resourceName='main-layout', texturePack = self.texturePack })
    local openSecondScene = self.layer:findPropById ( 'pink_box' ) 
    openSecondScene.onTouch = function ( self, event ) 
       local app = MyApplication.getSharedApp () 
-      app:replaceScene ( app.secondScene ) 
+      app:replaceScene ( app.secondScene, 'Hello Second Scene!' ) 
    end
 end
 
@@ -38,8 +38,9 @@ function SecondScene:init ()
    return self
 end
 
-function SecondScene:onLoadScene () 
+function SecondScene:onLoadScene ( params )
    -- loading sprite pack
+   print ( params )
    self.texturePack = terevaka.TKResourceManager.loadDrawable ( 'main' ) 
    
    -- loading scene layer
